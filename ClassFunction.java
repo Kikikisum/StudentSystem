@@ -19,7 +19,7 @@ import java.util.Date;
             Date d =cla.getEnter_time();
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
             String time = sdf.format(d);
-            String sql = "INSERT INTO class VALUES('"+cla.getNum()+"','"+cla.getStu()+"','"+time+"')";
+            String sql = "INSERT INTO class VALUES('"+cla.getNum()+"','"+cla.getStu().getName+"','"+time+"')";
             result = stat.executeUpdate(sql);
         }catch (Exception e){
             result=0;
@@ -58,7 +58,7 @@ import java.util.Date;
             Date d =cla.getEnter_time();
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
             String time = sdf.format(d);
-            String sql = "UPDATE class SET num='"+cla.getNum()+"',stu='"+cla.getStu()+"',enter_time='"+cla.getEnter_time()+"'WHERE stu='"+cla.getStu()+"'";
+            String sql = "UPDATE class SET num='"+cla.getNum()+"',stu='"+cla.getStu().getName+"',enter_time='"+cla.getEnter_time()+"'WHERE stu='"+cla.getStu()+"'";
             result = stat.executeUpdate(sql);
         }catch (Exception e){
             result=0;
